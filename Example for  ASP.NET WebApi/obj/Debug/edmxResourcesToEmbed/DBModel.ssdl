@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Student_DataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Student_DataBase.dbo.Student_Details_Registration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Student_Details_Registration">
+    <Key>
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="First Name" />
+      <PropertyRef Name="Last Name" />
+      <PropertyRef Name="Location" />
+      <PropertyRef Name="Degree" />
+      <PropertyRef Name="Stream" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="First Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Last Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date of Birth" Type="date" />
+    <Property Name="Location" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Degree" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Stream" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Student_DataBaseModelStoreContainer">
+    <EntitySet Name="Student_Details_Registration" EntityType="Self.Student_Details_Registration" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Student_Details_Registration].[username] AS [username], 
+[Student_Details_Registration].[password] AS [password], 
+[Student_Details_Registration].[First Name] AS [First Name], 
+[Student_Details_Registration].[Last Name] AS [Last Name], 
+[Student_Details_Registration].[Date of Birth] AS [Date of Birth], 
+[Student_Details_Registration].[Location] AS [Location], 
+[Student_Details_Registration].[Degree] AS [Degree], 
+[Student_Details_Registration].[Stream] AS [Stream]
+FROM [dbo].[Student_Details_Registration] AS [Student_Details_Registration]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
